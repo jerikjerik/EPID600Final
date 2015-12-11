@@ -1,0 +1,276 @@
+---
+title: "EPID 600 Project Template"
+author: "Your Name"
+output: html_document
+---
+
+Use this template to complete your project throughout the course. Your Final Project presentation in class will be based on the contents of this document. Due dates:
+
+- Topic choice: 9/18/15
+- List of faculty/staff to be contacted: 10/2/15
+- Complete overview with data source to address a specific problem identified: 10/16/15
+- Introduction: 11/9/15
+- Methods and Results draft: 11/23/15
+- Final Document: 12/11/15
+
+### Overview
+In this section, give a brief a description of your project and its goal, what data you are using to complete it, and what three faculty/staff in different fields you have spoken to about your project with a brief summary of what you learned from each person. Include a link to your final project GitHub repository.
+
+> Title: Gender Differences in Self-Defensive Gun Use: A Visual Descriptive Analysis of 1992-2014 Incident Reports from the National Crime Victimization Survey
+
+> The purpose of this project is to explore visualized trajectories (or pathways) of NCVS data across response items that pertain to the antecedents and consequences of self-defensive gun use. In particular, I am interested in assessing for variability in this patterning according to victim gender; i.e., to examine whether parallel coordinate visualization might elucidate or uncover trends in the data that differ by sex. 
+
+### Introduction 
+In the first paragraph, describe the problem addressed, its significance, and some background to motivate the problem.
+
+In the second paragraph, explain why your problem is interdisciplinary, what fields can contribute to its understanding, and incorporate background related to what you learned from meeting with faculty/staff.
+
+> The United States has a remarkably high number of privately owned guns: estimates range from 270-310 million, which – at their most conservative – approach a one-to-one ratio of firearms per resident [1]. Whether the ubiquity of firearm ownership in the US serves on balance as protection against violent crime or contributes to its lethality is an important, albeit contentios question [2, 11]; in part, due to its many intersecting fields of study, including public health, epidemiology, and criminology.
+
+> The most recent data on the epidemiology of firearm-related (FR) homicide suggests it is disparately high in the US – nearly 20 times higher than 23 other high-income nations [3]. Of particular concern are coincidant positive trends in FR homicide and intimate partner violence (IPV). The most recent estimates of the lifetime prevalence of IPV in the US is 35%, with 25% of women experiencing severe IPV in their lifetimes [4]. Alarmingly, the Bureau of Justice Statistics indicates that intimate partners perpetrated 14% of all homicides in the US in 2007, and that women were killed by intimate partners at twice the rate of males, most often by gunfire [5].
+
+> Interestingly, gun manufacturers have increasingly targeted firearm sales to women by espousing a net protective benefit of ownership (e.g., greater self-defensive capability and/or improved personal safety) [6]. Polling data suggests the initiative has been successful, with gun ownership up 13% among women from 2005 [7]. However, exceptionally few studies have examined the association between self-defensive gun use and safety or risk of injury, and their findings are mixed [2, 11]. The most recent public health research reports an increased risk of injury among firearm carriers [8], yet prior criminologic studies support armed resistance to victimization [9, 10]. Therefore, to clarify the issue, the focus of this study is to charactarize the utility of self-defensive gun use (SDGU) with respect to injury as it occured during crime victimizations that took place between 1992-2014 in the US, with a particular emphasis on the differential context and self-reported efficacy of SDGU incidents according to male and female victim gender.
+
+References:
+
+1. Small Arms Survey. (2011). Estimating Civilian Owned Firearms. [Research brief]. Retrieved May 5, 2015 from http://www.smallarmssurvey.org/fileadmin/docs/H-Research_Notes/SAS-Research-Note-9.pdf.
+
+2. Hemenway, D., Solnick, S. J (2015). The epidemiology of self-defensive gun use: evidence from the nation crime victimization surveys 2007-2011. Preventive Medicine, 79, 22-27.
+
+3. Richardson, E. G., & Hemenway, D. (2011). Homicide, suicide, and unintentional firearm fatality: Comparing the United States with other high-income countries, 2003. The Journal of Trauma, 70(1), 238-243. doi:10.1097/TA.0b013e3181dbaddf [doi] .
+
+4. National Intimate Partner and Sexual Violence Survey. (2010). 2010 Summary Report. Retrieved December 6, 2015 from http://www.cdc.gov/violenceprevention/pdf/nisvs_report2010-a.pdf
+
+5. Bureau of Justice Statistics, Selected Findings. (2009). Female Victims of Violence. Retrieved December 6, 2015 from http://www.bjs.gov/content/pub/pdf/fvv.pdf.
+
+6. Hutter, G. H. (Ed.). (2015). Guns and contemporary society: The past, present, and future of firearms and firearm policy. Santa Barbara, CA: Praeger.
+
+7. Gallup. (2011). Self-reported gun ownership in U.S. is highest since 1993. [Fact sheet]. Retrieved December 6, 2015 from http://www.gallup.com/poll/150353/self-reported-gun-ownership-highest-1993.aspx.
+
+8. Branas, C. C., Richmond, T. S., Culhane, D. P., Ten Have, T. R., & Wiebe, D. J. (2009). Investigating the link between gun possession and gun assault. American Journal of Public Health, 99(11), 2034-2040. doi:10.2105/AJPH.2008.143099 [doi] 
+
+9. Tark, J., Kleck, G. (2004). Resisting crime: The effects of victim action on the outcomes of crimes. Criminology, 42(4), 861-909.
+
+10. Tark, J. Kleck, G. (2014). Resisting rape: the effects of victim self-protection on rape completion and injury. Violence Against Women, 20(3), 270-292.
+
+11. Institute of Medicine. (2013). Priorities to reduce the threat of firearm-related violence. [Report]. Retrieved from https://www.iom.edu/Reports/2013/Priorities-for-Research-to-Reduce-the-Threat-of-Firearm-Related-Violence.aspx
+
+### Methods
+In the first paragraph, describe the data used and general methodological approach. Subsequently, incorporate full R code necessary to retrieve and clean data, and perform analysis. Be sure to include a description of code so that others (including your future self) can understand what you are doing and why.
+
+> A sample of 522 SDGU incidents was drawn from a public dataset of crime victimization incidents that were recorded by the US Census Bureau between 1992-2014 and made available by the Interuniverity Consortium for Political and Social Research (ICPSR) as part of their expansive NCVS datastore. The NCVS is an ongoing survey of a nationally representative sample of residential addresses -- about 50,000 households comprising approximately 80,000 individuals per year -- that is sponsored by the Bureau of Justice Statistics.
+
+> Incident cases that qualified for the analytic sample were those in which the respondent indicated their having personally seen the offender, and also reported  having threatened or attacked the offender with a gun while the victimization took place. 522 SDGU incidents qualified for analysis. The primary exposure of interest was victim gender, coded in the NCVS data as a binary variable with categories 'male' and 'female'. Explanatory variables of interest included offender relationship (categorically coded as either 'intimate partner', 'relative', 'acquaintance', 'stranger', or 'don't know'), number of offenders, offender gender, offender armed (categories include 'sharp object' 'blunt object', 'knife', 'firearm', and 'other'), and type of crime, which represents the NCVS's internal categorizations of crimes against individuals (e.g., 'simple assault', 'sexual attack', 'attempted theft', etc.) as well as crimes against households (e.g., 'burglary: forcible entry', 'burglary: unlawful entry without force', etc.).
+
+> A subgroup analysis was also conducted to examine injury outcomes among NCVS self-defensive gun users. 168 incident cases had complete data on injury and qualified for subgroup analysis. In addition to injury type (e.g., 'broken bones', 'gunshot', 'stab wounds', and 'internal injuries', etc.) several other explanatory variables were included in this subanalysis including SDGU temporality (i.e. response to the question item, "Was self-protective action taken before, during or after injury?"), the effect of SDGU (i.e. response to the question item, "Was self-protection action helpful, or hamful?"), and the SDGU effect mechanism (i.e. response to the question item, "How was self-protection action helpful, or harmful?")
+
+> Both primary and secondary analyses were completed using a parallel coordinate plot visualization approach, facilitated by the R package *extracat.* Using this strategy, data is repeatedly plotted on parallel axes, and corresponding points along the axes are connected with poly-lines. Each poly-line represents a single row (or, observation; i.e., incident report) in the data. While the original concept does not allow for categorical variables, development of the strategy has expanded on its overall uselfulness in pattern-finding: in particular, the parallel coordinate plot has been demonstrated as a powerful tool for visualizing a large number of variables in one display without dropping information on aggregate frequency counts (per category). Once the dataset is recursively sorted starting with the last variable (ending with the first), the heirarchical splitting structure from left to right transforms high-dimenstional relationships into easily seen two-dimensional patterns. As poly-lines -- matching in trajectory across the parallels -- form more recognizeable polygons, a relationship can be intuited to the extent that the ordering of parallels is reasonable or informative. As the size and shape of the polygons correlates directly to the number of observations that conform to a particular trajectory across the plotted variables or parallels, those polygons that maintain a relatively wide, uniform and unfractured shape may be considered to be particularly informative.
+
+``` {R eval = TRUE}
+
+#Set working directory to GitHub directory
+setwd("/Users/jerik/EPID600 Final Project/EPID600-Final-Project/")
+
+library(foreign)
+library(dplyr)
+
+#Read in NCVS 1992-2014 incident report data
+ncvs.data <- read.spss("/Users/jerik/EPID600 Final Project/36143-0003-Data.sav", to.data.frame = TRUE, use.value.labels=FALSE)
+
+#Generate defensive gun user (DGU) variable
+ncvs.data <- cbind(ncvs.data, dgu = ifelse(ncvs.data$V4144 | ncvs.data$V4147 == 1, TRUE, FALSE))
+
+#Generate DGU dataset and recode variables of interest
+ncvs.dgu <- ncvs.data %>%
+  dplyr::select(YEARQ, V3018, V4144, V4147, V4529, V4049, V4050, V4051, V4052, V4053, V4054, V4055, V4056, V4057,       V4110, V4111, V4112, V4113, V4114, V4115, V4116, V4117, V4118, V4119, V4120, V4121, V4161, V4162, V4163,          V4164, V4245, V4234, V4248, V4241, V4243, V4256, V4260, V4265, V4266, V4267, V4268, V4269, V4270, V4271,        V4048, V4236, V4249, V4250, V4166, V4167, V4168, V4169, V4170, V4171, V4172, V4173, V4175, V4176, V4177, V4178, V4179, V4180, V4181, V4182, dgu) %>%
+  filter(dgu %in% c("TRUE")) %>%
+  filter(V4048 %in% c(1)) %>%
+  
+  mutate(victim.sex = factor(V3018, levels = c(1,2), labels = c("male", "female"))) %>%
+  
+  mutate(known.offender = ifelse(V4241 %in% c(2) | V4256 %in% c(3), 1, 
+      ifelse(V4245 %in% c(3:6) | V4267 %in% c(1) | V4268 %in% c(1) | V4269 %in% c(1) | V4270 %in% c(1), 3,
+      ifelse(V4245 %in% c(1:2, 7) | V4265 %in% c(1) | V4266 %in% c(1) | V4271 %in% c(1), 4,
+      ifelse(V4241 %in% c(3) | V4234 %in% c(3) | V4256 %in% c(4:5), 5, 
+      ifelse(V4243 %in% c(8) | V4256 %in% c(8), NA, 2)))))) %>%
+  mutate(known.offender = factor(known.offender, levels = c(1:5), 
+      labels = c("Stranger", "Acquaintance", "Relative", "Intimate Partner", "Don't Know"))) %>%
+  
+  mutate(num.offender = ifelse(V4234==1, 1, 
+      ifelse(V4248 %in% c(98:99), NA,
+      ifelse(V4234 %in% c(2), V4248,
+      ifelse(V4234 %in% c(3), 97, NA))))) %>%
+  mutate(num.offender.cat = cut(num.offender, breaks = c(0, 1, 2, 3, 96, 100), 
+      labels = c("Single", "Two", "Three", "Four or more", "Don't Know"))) %>%
+      
+  mutate(armed.offender = ifelse (V4051 %in% c(1) | V4052 %in% c(1) | V4057 %in% c(1), 1,
+      ifelse(V4053 %in% c(1), 2,
+      ifelse(V4054 %in% c(1), 3,
+      ifelse(V4055 %in% c(1), 4,
+      ifelse(V4056 %in% c(1), 5,
+      ifelse(V4049 %in% c(2), 6,
+      ifelse(V4049 %in% c(3), 7, NA)))))))) %>%
+  mutate(armed.offender = factor(armed.offender, levels = c(1:7),
+      labels = c("Firearm", "Knife", "Sharp Object", "Blunt Object", "Other", "No", "Don't Know"))) %>%
+  
+  mutate(crime.type = ifelse(V4529 %in% c(11:17, 20), 1,
+      ifelse(V4529 %in% c(31:33), 2,
+      ifelse(V4529 %in% c(5:10), 3,
+      ifelse(V4529 %in% c(21, 41:59), 4, 5))))) %>%
+  mutate(crime.type = factor(crime.type, levels = c(1:5),
+      labels = c("Assault", "Burglary", "Robbery", "Theft", "Sexual Attacks"))) %>%
+  
+  mutate(crime.factor = ifelse(V4529 %in% c(4), 3,
+      ifelse(V4529 %in% c(5:7), 4,
+      ifelse(V4529 %in% c(8:10), 5,
+      ifelse(V4529 %in% c(11), 6,
+      ifelse(V4529 %in% c(12), 7,
+      ifelse(V4529 %in% c(13), 8,
+      ifelse(V4529 %in% c(14), 9,
+      ifelse(V4529 %in% c(17), 10,
+      ifelse(V4529 %in% c(18), 11,
+      ifelse(V4529 %in% c(19), 12,
+      ifelse(V4529 %in% c(20), 13,
+      ifelse(V4529 %in% c(21), 14,
+      ifelse(V4529 %in% c(31), 15,
+      ifelse(V4529 %in% c(32), 16,
+      ifelse(V4529 %in% c(33), 17,
+      ifelse(V4529 %in% c(54:58), 18, 19))))))))))))))))) %>%
+      
+  mutate(crime.factor = factor(crime.factor, levels = c(1:19),
+      labels = c("Rape", "Attempted Rape", "Sexual Attack", "Robbery", "Attempted Robbery", "Aggravated Assault", "Attempted Aggravated Assault", "Threatened Assault", "Simple Assault", "Assault without Weapon or Injury", "Verbal Threat of Rape", "Verbal Threat of Sexual Assault", "Verbal Threat of Assault", "Purse Snatching", "Burglary: Forcible Entry", "Burglary: Unlawful Entry without Force", "Attempted Forcible Entry", "Theft", "Attempted Theft"))) %>%
+      
+  mutate(injury.type = ifelse(V4111 %in% c(1) | V4529 %in% c(7, 10, 17), 1,
+      ifelse(V4112 %in% c(1) | V4113 %in% c(1) | V4114 %in% c(1), 2,
+      ifelse(V4115 %in% c(1), 3,
+      ifelse(V4116 %in% c(1), 4,
+      ifelse(V4117 %in% c(1), 5,
+      ifelse(V4118 %in% c(1), 6,
+      ifelse(V4119 %in% c(1), 7,
+      ifelse(V4120 %in% c(1), 8,
+      ifelse(V4121 %in% c(1), 9, NA)))))))))) %>%
+  mutate(injury.type = factor(injury.type, levels = c(1:9),
+      labels = c("None", "Rape/Sexual Assault", "Stab Wounds", "Gunshot", "Broken Bones", "Internal", "Knocked Out","Minor",                    "Other"))) %>%
+
+  mutate(injury.temp = ifelse(V4111 %in% c(1) | V4529 %in% c(7, 10, 17), 1,
+    ifelse(V4162 %in% c(1), 2,
+    ifelse(V4164 %in% c(1), 3,
+    ifelse(V4163 %in% c(1), 4, NA))))) %>%
+    
+  mutate(injury.temp =factor(injury.temp, levels = c(1:4),
+    labels = c("Uninjured", "Before Injury", "During Injury", "After Injury"))) %>%
+  
+  mutate(offender.sex = ifelse(V4236 %in% c(1), 1,
+    ifelse(V4236 %in% c(2), 2,
+    ifelse(V4249 %in% c(1) | V4250 %in% c(1), 3,
+    ifelse(V4249 %in% c(2) | V4250 %in% c(2), 4,
+    ifelse(V4250 %in% c(3), 5, NA)))))) %>%
+    
+  mutate(offender.sex = factor(offender.sex, levels = c(1:5),
+    labels = c("Male", "Female", "Majority Male", "Majority Female", "Even Male/Female"))) %>%
+    
+  mutate(sp.help = ifelse(V4175 %in% c(1), 4,
+    ifelse(V4166 %in% c(1), 1,
+    ifelse(V4175 %in% c(2), 5, 
+    ifelse(V4166 %in% c(2), 2, 
+    ifelse(V4166 %in% c(3) | V4175 %in% c(3), 3, NA)))))) %>%
+    
+  mutate(sp.help = factor(sp.help, levels = c(1:5),
+    labels = c("DGU Helped", "DGU did not Help", "Don't Know", "DGU Harmed", "DGU did not Harm"))) %>%
+    
+  mutate(sp.effect = ifelse(V4177 %in% c(1), 7,
+    ifelse(V4178 %in% c(1), 8,
+    ifelse(V4179 %in% c(1), 9,
+    ifelse(V4180 %in% c(1), 10,
+    ifelse(V4181 %in% c(1), 11,
+    ifelse(V4168 %in% c(1), 1,
+    ifelse(V4169 %in% c(1), 2,
+    ifelse(V4170 %in% c(1), 3,
+    ifelse(V4171 %in% c(1), 4,
+    ifelse(V4172 %in% c(1), 5,
+    ifelse(V4173 %in% c(1), 6,
+    ifelse(V4182 %in% c(1), 12, NA))))))))))))) %>%
+  
+  mutate(sp.effect = factor(sp.effect, levels = c(1:12),
+    labels = c("Avoided Injury", "Scared Offender Away", "Helped Escape", "Protected Property", "Protected Others", "Other Help", "Led to Injury", "Property Damage", "Hurt Others", "Offender Got Away", "Angered Offender", "Other Harm")))
+
+#Save full dgu dataframe to github repository
+save(ncvs.dgu, file="ncvs_trim.Rda")
+
+#Generate subset of observation with complete data on DGU effectiveness
+ncvs.dgu.effect <- ncvs.dgu %>%
+  dplyr::select(victim.sex, known.offender, injury.type, injury.temp, sp.help, sp.effect) %>%
+  filter(injury.temp %in% c( "Uninjured", "Before Injury", "During Injury", "After Injury"))
+
+#Save complete case dataframe to github repository
+save(ncvs.dgu.effect, file="ncvs_trimCC.Rda")
+
+```
+
+
+### Results
+Describe your results and include relevant tables, plots, and code/comments used to obtain them. End with a brief conclusion of your findings related to the question you set out to address.
+
+> On balance, female SDGU incidents appear to disproportionately involved assaults by intimate partner offenders, and involved a larger relative proportion of 'relative' and 'acquaintance' offenders as compared to male DGU incidents -- the majority of which involved strangers (see Figure 1). Both male and female SDGU incidents most often involved a lone, unarmed male offender; when the offender was armed, 'firearm' was the most commonly reported weapon (see Figures 1 and 2). The most pronounced protective benefit of female SDGU was in response to stranger violence: most cases indicated SDGU successfully avoided injury or further harm (see Figure 3). A larger proportion of female SDGUs reported injury relative to males, although the majority of incidents for both sexes did not result in injury. Minor injuries were the most common injury among female SDGUs; most were sustained during the act of self-defensive gun use, and female SDGUs reported a mixed beneficial effect with respect to avoidance of further harm (see Figure 3). In general, two relatively distinct trajectories across SDGU variables were observed for female victims, which were moderated by offender relationship: female SDGUs that faced an intimate partner were mostly injured, used self-protective gun use before or during injury, and were mixed in reporting whether SDGU was helpful or harmful (see Figure 4). Female SDGUs that faced a stranger offender typically reported having avoided injury, and believed that SDGU helped to achieve this end as well as to scare the offender away (see Figure 5).
+
++ Figure 1: All NCVS SDGU Cases from 1992-2014 in which the respondent indicated that they saw the offender (N = 522). Represented variables from left to right: (1) Victim sex; (2) type of crime code; (3) offender relation to victim; (4) number of offenders; (5) offender sex; (6) armed offender by type; (7) victim injury by type; and (8) did DGU occur before, after, or during injury [i.e. temporality].
+
+``` {R eval = TRUE}
+library(extracat)
+
+#Subset SDGU data for full sample plot
+ncvs.dgu.full <- ncvs.dgu %>%
+  dplyr::select(victim.sex, crime.factor, known.offender, num.offender.cat, offender.sex, armed.offender, injury.type, injury.temp)
+
+#Plot parallel coordinate plot for full SDGU sample, including injury outcomes with missing
+ncvs.full.plot <- steptile(ncvs.dgu.full, k=1, cpcp = TRUE)
+scpcp(ncvs.full.plot, sel = "data[, 1]", sel.hide = TRUE, level.width = 0.5, label = TRUE)
+
+```
+
+
++ Figure 2: SDGU cases with complete data on injury and temporality variables (n = 168) Represented variables from left to right: (1) Victim sex; (2) type of crime code; (3) offender relation to victim; (4) number of offenders; (5) offender sex; (6) armed offender by type; (7) victim injury by type; and (8) did DGU occur before, after, or during injury [i.e. temporality].
+``` {R eval = TRUE}
+
+ncvs.dgu.temp <- ncvs.dgu.full %>%
+  filter(injury.temp %in% c( "Uninjured", "Before Injury", "During Injury", "After Injury"))
+
+ncvs.temp.plot <- steptile(ncvs.dgu.temp, k=1, cpcp = TRUE)
+injury.plot <- scpcp(ncvs.temp.plot, gap = 0.5, sel.hide = TRUE, sel = "data[, 1]", level.width = 0.5, label = TRUE)
+
+```
+
+
+
++ Figure 3: Examining the Effectiveness od SDGU by Helpfulness, Harmfulness and Mechanism (n = 168)
+``` {R eval = TRUE}
+
+#Plot example parallel coordinate plot for DGU effectiveness subgroup
+library(extracat)
+
+ncvs.effect.plot <- steptile(ncvs.dgu.effect, k=1, cpcp = TRUE)
+scpcp(ncvs.effect.plot, gap = 0.5, sel.hide = TRUE, sel = "victim.sex=='female'", level.width = 0.5, label = TRUE)
+
+```
+
+
++ Figure 4: Examining the Effectiveness od SDGU by Helpfulness, Harmfulness and Mechanism According to Offender Type: Intimate Partner (n = 168)
+``` {R eval = TRUE}
+
+ncvs.dgu.ipv <- ncvs.dgu.effect %>%
+  dplyr::select(victim.sex, known.offender, injury.temp, sp.help, sp.effect)
+
+ncvs.ipv.plot <- steptile(ncvs.dgu.ipv, k=1, cpcp = TRUE)
+scpcp(ncvs.ipv.plot, gap = 0.5, sel.hide = TRUE, sel = "victim.sex=='female' & known.offender=='Intimate Partner'", level.width = 0.5, label = TRUE)
+
+```
+
++ Figure 5: Examining the Effectiveness od SDGU by Helpfulness, Harmfulness and Mechanism According to Offender Type: Stranger (n = 168)
+
+``` {R eval = TRUE}
+
+scpcp(ncvs.ipv.plot, gap = 0.5, sel.hide = TRUE, sel = "victim.sex=='female' & known.offender=='Stranger'", level.width = 0.5, label = TRUE)
+
+```
+
+> Conclusion: Readily observable differences exist in the U.S. between male and female crime victims both in the context and consequences of self-defensive gun use. Female self-defensive gun users more often encountered known offenders than males, and injuries resulting from intimate partner violence were infrequently avoided or attenuated by SDGU. Conversely, SDGU was typically effective in avoiding injury from stranger violence for both male and female self-defensive gun users.
